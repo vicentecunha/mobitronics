@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/point_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/time_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toRightOf="@id/point_tv"
+        android:layout_marginLeft="@dimen/isopowerpoint_margin"
+        android:layout_marginStart="@dimen/isopowerpoint_margin" />
+
+    <TextView
+        android:id="@+id/timeUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/time_et"
+        android:text="@string/min"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/intensity_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/timeUnit_tv"
+        android:layout_marginLeft="@dimen/isopowerpoint_margin"
+        android:layout_marginStart="@dimen/isopowerpoint_margin"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/intensityUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/intensity_et"
+        android:textSize="@dimen/therapy_textSize"
+        android:text="@string/unidade"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vcc.vicente.mobitronics.TherapyActivity">
+
+    <TextView
+        android:id="@+id/operationMode_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modo_de_operacao"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/therapy_margin"
+        android:layout_marginStart="@dimen/therapy_margin"
+        android:layout_marginTop="@dimen/therapy_margin"/>
+
+    <RadioGroup
+        android:id="@+id/operationMode_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/operationMode_tv"
+        app:layout_constraintLeft_toLeftOf="@id/operationMode_tv">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fes"
+            android:textSize="@dimen/therapy_textSize"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fes_passivo"
+            android:textSize="@dimen/therapy_textSize"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passivo"
+            android:textSize="@dimen/therapy_textSize"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/isopower_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/isopower"
+        app:layout_constraintTop_toBottomOf="@id/operationMode_rg"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toLeftOf="@id/operationMode_tv"
+        android:layout_marginTop="@dimen/therapy_margin"/>
+
+    <RadioGroup
+        android:id="@+id/isopwer_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/isopower_tv"
+        app:layout_constraintLeft_toLeftOf="@id/operationMode_tv">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ligado"
+            android:textSize="@dimen/therapy_textSize"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desligado"
+            android:textSize="@dimen/therapy_textSize"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/load_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carga"
+        app:layout_constraintTop_toBottomOf="@id/isopwer_rg"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toLeftOf="@id/operationMode_tv"
+        android:layout_marginTop="@dimen/therapy_margin"/>
+
+    <RadioGroup
+        android:id="@+id/load_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/load_tv"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toLeftOf="@id/operationMode_tv">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/constante"
+            android:textSize="@dimen/therapy_textSize"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/variavel"
+            android:textSize="@dimen/therapy_textSize"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/times_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempos"
+        app:layout_constraintLeft_toRightOf="@id/operationMode_tv"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintTop_toTopOf="@id/operationMode_tv"
+        android:layout_marginLeft="@dimen/therapy_margin"
+        android:layout_marginStart="@dimen/therapy_margin" />
+
+    <TextView
+        android:id="@+id/fes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fes_"
+        app:layout_constraintTop_toBottomOf="@id/times_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/fesUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        app:layout_constraintLeft_toRightOf="@id/fes_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/fes_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/passive_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/passivo_"
+        app:layout_constraintTop_toBottomOf="@id/fes_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/passive_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/passive_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/passive_tv"
+        android:inputType="number"
+        android:ems="2"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/passiveUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        app:layout_constraintLeft_toRightOf="@id/passive_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/passive_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/total_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_"
+        app:layout_constraintTop_toBottomOf="@id/passive_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/totalUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        app:layout_constraintLeft_toRightOf="@id/total_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/fes_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/passive_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/fes_tv"
+        android:inputType="number"
+        android:ems="2"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/total_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_tv"
+        app:layout_constraintLeft_toLeftOf="@id/passive_et"
+        android:inputType="number"
+        android:ems="2"
+        android:enabled="false"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/fadiga_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fadiga"
+        app:layout_constraintLeft_toRightOf="@id/fesUnit_tv"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/times_tv"
+        android:layout_marginLeft="@dimen/therapy_margin"/>
+
+    <RadioGroup
+        android:id="@+id/fadiga_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fadiga_tv"
+        android:textSize="@dimen/therapy_textSize"
+        app:layout_constraintLeft_toLeftOf="@id/fadiga_tv">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desligar_ao_fadiga"
+            android:textSize="@dimen/therapy_textSize"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passivo_ao_fadiga"
+            android:textSize="@dimen/therapy_textSize"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/speed_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/velocidade"
+        app:layout_constraintTop_toBottomOf="@id/total_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"
+        android:layout_marginTop="@dimen/therapy_margin"/>
+
+    <TextView
+        android:id="@+id/limitIntensity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intensidade_limite"
+        app:layout_constraintTop_toBottomOf="@id/speed_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/recoveryTime_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempo_de_recuperacao"
+        app:layout_constraintTop_toBottomOf="@id/limitIntensity_tv"
+        app:layout_constraintLeft_toLeftOf="@id/times_tv"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/recoveryTime_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/recoveryTime_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/recoveryTime_tv"
+        android:inputType="number"
+        android:ems="2"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/recoveryTimeUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        app:layout_constraintLeft_toRightOf="@id/recoveryTime_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/recoveryTime_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/limitIntensity_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/limitIntensity_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/limitIntensity_tv"
+        app:layout_constraintLeft_toLeftOf="@id/recoveryTime_et"
+        android:inputType="number"
+        android:ems="2"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/limitIntensityUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unidade"
+        app:layout_constraintLeft_toRightOf="@id/limitIntensity_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/limitIntensity_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <EditText
+        android:id="@+id/speed_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/speed_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/speed_tv"
+        app:layout_constraintLeft_toLeftOf="@id/recoveryTime_et"
+        android:inputType="number"
+        android:ems="2"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <TextView
+        android:id="@+id/speedUnit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rpm"
+        app:layout_constraintLeft_toRightOf="@id/speed_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/speed_et"
+        android:textSize="@dimen/therapy_textSize"/>
+
+    <ListView
+        android:id="@+id/isopower_points"
+        android:layout_width="512dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/recoveryTime_tv"
+        app:layout_constraintLeft_toRightOf="@id/load_rg"
+        android:layout_marginTop="@dimen/therapy_margin"
+        android:layout_marginLeft="@dimen/therapy_margin"
+        android:layout_marginStart="@dimen/therapy_margin" />
+
+</android.support.constraint.ConstraintLayout>
